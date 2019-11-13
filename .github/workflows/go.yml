@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       run: sudo apt-get install libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libgl1-mesa-dev libsdl2-dev libasound2-dev
-      if:
+      if: ${{ matrix.os }} == "ubuntu-latestA"
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
