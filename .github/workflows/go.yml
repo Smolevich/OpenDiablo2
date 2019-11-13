@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, osx, windows]
+        os: [ubuntu-latest, macos-latest, windows-latest]
         go-version: [1.13.x]
     name: Build on ${{ matrix.os }}
     steps:
@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libgl1-mesa-dev libsdl2-dev libasound2-dev
       if: matrix.os == 'ubuntu-latest'
-      
+
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
 
